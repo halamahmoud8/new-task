@@ -1,0 +1,34 @@
+<div class="col-md-3">
+    <app-filter [res]=res></app-filter>
+</div>
+<div class="col-md-9">
+
+<div class="courses-list">
+    <h5 class="mb-3">All Courses</h5>
+    <div class="line"></div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let data of courseDetails">
+            <div class="card course-card">
+                <img src="{{data.courseImg}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{data.courseName}}</p>
+                    <div class="row">
+                        <ul class="info-list col-4">
+                            <li>{{data.courseLevel}}</li>
+                            <li>Duration:{{data.courseDuration}}</li>
+                        </ul>
+                        <ul class="info-list col-3">
+                          <li><i [ngClass]="[data.courseDuration > 10 ? 'red' : 'green' ]" class="fas fa-users"></i>{{data.availableSeats}}</li>
+
+                            <li>${{data.coursePrice}}</li>
+                        </ul>
+                        <div class="add-cart col-5 p-0">
+                            <a href="#" class="btn course-btn">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
